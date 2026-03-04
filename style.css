@@ -1,23 +1,63 @@
 .bento {
+    container-type: inline-size;
     display: grid;
+    grid-auto-rows: auto;
+    grid-auto-columns: repeat (3 1fr);
+grid-template-areas: 
+"title title imgWithText"
+"img buzz imgWithText"
+"img buzz www";
+
     gap: var(--spacing-base);
 
     .title {
+        grid-area: title;
         --bg: var(--color-brand-yellow);
     }
 
     .list {
+        grid-area: buzz;
         --bg: var(--color-brand-coffee);
     }
 
     .image-1 {
+        grid-area: imgWithText;
         color: var(--color-text-accent);
+        position: relative;
+        display: block;
+    }
+    .overlay {
+        position: absolute;
+        inset: 0;
+        align-items: center;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .image-2 {
+        grid-area: img;
     }
 
     .tag {
+        grid-area: www;
         --bg: var(--color-brand-olive);
         font-size: 2rem;
         line-height: 1.2;
+    }
+}
+
+.title {
+    display: grid;
+    
+}
+@media (width < 700px) {
+    .bento {
+        display: grid;
+        grid-template-areas: 
+        "title title"
+        "imgWithText img"
+        "buzz www";
     }
 }
 
@@ -42,7 +82,9 @@ h2 {
     font-size: 1.2rem;
     margin-top: auto;
 }
-
+.highlight {
+    color: var(--color-brand-yellow);
+}
 
 
 @layer {
