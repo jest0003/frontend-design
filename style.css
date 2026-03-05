@@ -44,7 +44,7 @@ article {
             text-align: center;
         }
         .content {
-            margin: -10px;
+            margin-top: -50px;
         }
         img {
       mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
