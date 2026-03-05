@@ -1,8 +1,6 @@
 .bento {
     container-type: inline-size;
     display: grid;
-    grid-auto-rows: auto;
-    grid-auto-columns: repeat (3 1fr);
 grid-template-areas: 
 "title title imgWithText"
 "img buzz imgWithText"
@@ -18,6 +16,7 @@ grid-template-areas:
     .list {
         grid-area: buzz;
         --bg: var(--color-brand-coffee);
+        font-size: 40px;
     }
 
     .image-1 {
@@ -25,6 +24,9 @@ grid-template-areas:
         color: var(--color-text-accent);
         position: relative;
         display: block;
+        max-width: 400px;
+        height: 100%;
+        object-fit: cover;
     }
     .overlay {
         position: absolute;
@@ -37,6 +39,7 @@ grid-template-areas:
     }
     .image-2 {
         grid-area: img;
+        height: 100%;
     }
 
     .tag {
