@@ -16,7 +16,7 @@ grid-template-areas:
     .list {
         grid-area: buzz;
         --bg: var(--color-brand-coffee);
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .image-1 {
@@ -30,21 +30,20 @@ grid-template-areas:
           
           
         }
-        h3 {
+        h3, p {
           z-index: 1;
           place-self: start;
-          margin: 0 auto;
+          margin: 10px auto 10px;
         }
         p {
-          z-index: 1;
           place-self: end;
-          margin: 0 auto;
-        
         }
     }
     .image-2 {
+      display: grid;
         grid-area: img;
-        height: 100%;
+        place-self: stretch;
+      object-fit: cover;
     }
 
     .tag {
@@ -67,6 +66,12 @@ grid-template-areas:
         "imgWithText img"
         "buzz www";
     }
+    li {
+      font-size: 20px;
+    }
+    /* .title {
+      display: contents;
+    } til boks str!!*/
 }
 
 .card {
