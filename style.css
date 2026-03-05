@@ -23,19 +23,24 @@ grid-template-areas:
         grid-area: imgWithText;
         color: var(--color-text-accent);
         position: relative;
-        display: block;
-        max-width: 400px;
-        height: 100%;
+        display: grid;
         object-fit: cover;
-    }
-    .overlay {
-        position: absolute;
-        inset: 0;
-        align-items: center;
-        margin: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        >* {
+          grid-area: 1/1;
+          
+          
+        }
+        h3 {
+          z-index: 1;
+          place-self: start;
+          margin: 0 auto;
+        }
+        p {
+          z-index: 1;
+          place-self: end;
+          margin: 0 auto;
+        
+        }
     }
     .image-2 {
         grid-area: img;
