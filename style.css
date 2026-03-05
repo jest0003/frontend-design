@@ -1,7 +1,7 @@
 body {
   display: grid;
   /* Tilføj navngivne linjer */
-  grid-template-columns: 1fr minmax(0, 70ch) 1fr;
+  grid-template-columns: [full-start] 1fr [content] minmax(0, 70ch) 1fr [full-end];
 }
 
 .breakout {
