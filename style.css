@@ -9,8 +9,44 @@
     --gray-700: #374151;
     --gray-800: #1f2937;
     --gray-900: #111827;
+
+    --step--1: clamp(o.89rem, 0.86rem + 0.16vw, 1rem);
+    --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    --step-1: clamp(1.25rem, 1.12rem + 0.6vw, 1.5rem);
+    --step-2: clamp(1.56rem, 1.3rem + 1.2vw, 2rem);
+
+    --space-s: clamp(0.75rem, 0.7rem + 0.2vw, 0.9rem);
+    --space-m: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+    --space-l: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+}
+
+html {
+    line-height: 1.6;
+    h1, h2 {
+        line-height: 1.1;
+    }
+    h3, h4 {
+        line-height: 1.25;
+    }
 }
 
 body {
     font-family: system-ui, sans-serif;
+}
+article {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+
+    >*+* {
+        margin-block-start: 1em;
+    }
+    >h2+h3 {
+
+    }
+    h1 {
+    color: var(--gray-900);
+    font-size: var(--step-2);
+}
 }
