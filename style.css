@@ -1,10 +1,17 @@
 @import url('https://fonts.cdnfonts.com/css/gill-sans-2');
 @import url('https://fonts.cdnfonts.com/css/abril-fatface');
 
+html {
+    --color-white: rgb(255, 255, 255);
+    --color-light: rgb(180, 180, 180);
+    --color-medium: rgb(110, 110, 110);
+    --color-dark: rgb(22, 22, 22);
+}
+
 article {
     font-family: 'Gill Sans', sans-serif;
     max-inline-size: 400px;
-    background: #fff;
+    background: var(--color-white);
     margin-block: 3rem;
     box-shadow:
         0 20px 25px -5px rgba(0, 0, 0, 0.1),
@@ -15,7 +22,6 @@ article {
 
 .picture {
     display: grid;
-    padding: .5rem;
 
     >* {
         grid-area: 1 / 1;
@@ -25,7 +31,9 @@ article {
         place-self: start;
         margin: 1rem;
         z-index: 1;
-        color: #fff;
+        background-color: var(--color-white);
+        border-radius: 50%;
+        color: var(--color-light);
     }
 
     .image-count {
@@ -34,14 +42,14 @@ article {
         letter-spacing: 2px;
         line-height: 1;
         place-self: end;
-        background: #BDC4CE;
-        color: #fff;
+        background: var(--color-medium);
+        color: var(--color-white);
         margin: 1rem;
     }
 
     img {
-        border: 1px solid #DADCEB;
-        border-radius: .5rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
     }
 }
 
@@ -55,22 +63,22 @@ article {
     font-family: 'Abril Fatface', sans-serif;
     font-weight: 400;
     font-size: 2rem;
-    color: #3C55CC;
+    color: var(--color-dark);
 }
 
 .location {
-    color: #C8C9CB;
-    text-transform: uppercase;
+    color: var(--color-light);
     font-size: .95em;
 }
 
 .description p {
-    text-align: center;
+    color: var(--color-light);
 }
 
 .amenities-details {
     display: flex;
     gap: 1rem;
+    border-top: 1px solid var(--color-light);
 
     li {
         flex: 1;
@@ -78,8 +86,7 @@ article {
         gap: .75rem;
         place-items: center;
         padding: .25rem;
-        background: #F0F2FF;
-        color: #3C55CC;
+        color: var(--color-light);
     }
 }
 
