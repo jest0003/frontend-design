@@ -10,6 +10,7 @@ const { id, question, answer, linkBlock } = props;
   <summary>
     <span>
       {question}
+      <PlusIcon />
     </span>
   </summary>
   <div class="answer">
@@ -38,6 +39,9 @@ const { id, question, answer, linkBlock } = props;
         content-visibility 1s allow-discrete,
         opacity 1s;
     }
+    &[open] {
+      --r: z 90deg;
+    }
 
     &[open]::details-content {
       opacity: 1;
@@ -60,7 +64,6 @@ const { id, question, answer, linkBlock } = props;
       span {
         border: none;
         text-align: start;
-        align-items: center;
         padding: 0;
         inline-size: 100%;
         padding-block: 1rlh;
@@ -68,15 +71,10 @@ const { id, question, answer, linkBlock } = props;
         gap: 1rem;
         justify-content: space-between;
 
-        &::after {
-          content: "+";
-          font-size: 1lh;
+        svg {
           inline-size: auto;
           height: 1lh;
           flex-shrink: 0;
-        }
-        [open] &::after {
-          content: "-";
         }
       }
     }
