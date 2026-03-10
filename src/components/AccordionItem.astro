@@ -1,5 +1,7 @@
 ---
 import PlusIcon from "../icons/plus.svg";
+import MinusIcon from "../icons/minus.svg";
+const plus = PlusIcon;
 const { exclusive, ...props } = Astro.props;
 const { id, question, answer, linkBlock } = props;
 ---
@@ -8,7 +10,6 @@ const { id, question, answer, linkBlock } = props;
   <summary>
     <span>
       {question}
-      <PlusIcon />
     </span>
   </summary>
   <div class="answer">
@@ -28,6 +29,21 @@ const { id, question, answer, linkBlock } = props;
     color: hsl(190 30% 12%);
     border-bottom: 1px solid #dadada;
 
+    &::details-content {
+      opacity: 0;
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        height 1s ease-out,
+        content-visibility 1s allow-discrete,
+        opacity 1s;
+    }
+
+    &[open]::details-content {
+      opacity: 1;
+      height: 200px;
+    }
+
     summary {
       font-weight: 700;
       color: #181818;
@@ -44,6 +60,7 @@ const { id, question, answer, linkBlock } = props;
       span {
         border: none;
         text-align: start;
+        align-items: center;
         padding: 0;
         inline-size: 100%;
         padding-block: 1rlh;
@@ -51,10 +68,15 @@ const { id, question, answer, linkBlock } = props;
         gap: 1rem;
         justify-content: space-between;
 
-        svg {
+        &::after {
+          content: "+";
+          font-size: 1lh;
           inline-size: auto;
           height: 1lh;
           flex-shrink: 0;
+        }
+        [open] &::after {
+          content: "-";
         }
       }
     }
