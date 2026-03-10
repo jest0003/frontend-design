@@ -26,6 +26,15 @@ const { id, question, answer, linkBlock } = props;
 </details>
 
 <style>
+  html {
+    interpolate-size: allow-keywords;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    details::details-content {
+      transition: none;
+    }
+  }
+
   details {
     color: hsl(190 30% 12%);
     border-bottom: 1px solid #dadada;
